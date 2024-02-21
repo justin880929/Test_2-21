@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>Test 2/21</title>
+</head>
+
+<body>
+    <style>
+        .selectArea {
+            width: 300px;
+        }
+
+        .selectDropdown {
+            position: relative;
+        }
+
+        .selectDropdown select {
+            width: 300px;
+        }
+
+        .overSelect {
+            position: absolute;
+            left: 0;
+            right: 0;
+            top: 0;
+            bottom: 0;
+        }
+
+        .selectDropdown select option {
+            display: none;
+        }
+
+        #selectCheckboxs {
+            display: none;
+            position: relative;
+            border: 1px #dadada solid;
+            z-index: 999;
+        }
+
+        #selectCheckboxs label {
+            display: block;
+        }
+
+        #selectCheckboxs label:hover {
+            background-color: #1e90ff;
+        }
+    </style>
+    <form onsubmit="submitValue();return false">
+        <div class="selectArea">
+            <div class="selectDropdown" onclick="showCheckbox()">
+                <select>
+                    <option >選擇城市</option>
+                    <option id="selectCitys"></option>
+                </select>
+                <div class="overSelect"></div>
+            </div>
+            <div id="selectCheckboxs">
+                <label for="tpe">
+                    <input type="checkbox" id="tpe" value="台北市"/>台北市</label>
+                <label for="ntpc">
+                    <input type="checkbox" id="ntpc" value="新北市"/>新北市</label>
+                <label for="tyn">
+                    <input type="checkbox" id="tyn" value="桃園市"/>桃園市</label>
+            </div>
+        </div>
+        <button type="submit">submit</button>
+    </form>
+    <script src="./index.js"></script>
+</body>
+
+</html>
